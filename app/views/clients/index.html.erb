@@ -1,0 +1,33 @@
+<div class="container">
+	<h1>All Clients</h1>
+	<div class="form">
+		<h3>Fill my  form</h3>
+		<%= render 'form' %>
+	</div>
+
+
+	<table class="table table-striped table-inverse ">
+
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Age</th>
+	      <th>Action</th>
+	    </tr>
+	  </thead>
+	 
+	    <tbody>
+			<% @clients.each do |c| %>
+	    		<tr>
+					<td><%= c.name %></td> 	
+					<td><%= c.age %></td> 	
+					<td><%= link_to 'Delete', client_path(c),
+				           	  method: :delete, class: "btn btn-danger",
+				            	 data: {confirm: 'Do you want to remove this Client?'} %> 	
+				    </td>	             	 	
+				</tr>
+			<% end %>
+		</tbody>		
+	</table>
+
+</div>
