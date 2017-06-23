@@ -11,7 +11,7 @@ class ClientsController < ApplicationController
 
   def create
   	@client = Client.create!(client_params)
-  	 @client.save
+  	@client.save
   	redirect_to root_path
   end
 
@@ -22,6 +22,6 @@ class ClientsController < ApplicationController
   end
 
   def client_params
- 	 params.require(:client).permit(:name, :age)
+ 	 params.require(:client).permit(:name, :age, :product_id)
   end
 end
