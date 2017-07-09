@@ -1,3 +1,4 @@
 class Product < ApplicationRecord
-	belongs_to :order, optional: true
+	has_many :order_products 
+	accepts_nested_attributes_for :order_products
 end

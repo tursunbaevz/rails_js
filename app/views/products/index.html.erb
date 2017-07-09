@@ -2,7 +2,7 @@
 	<h1>Products</h1>
 	<div class="form">
 		<h3></h3>
-		<%= render 'product' %>
+		<%= link_to 'New', new_product_path, class: 'btn btn-success' %>	
 	</div>
 
 
@@ -15,13 +15,16 @@
 	      <th>Action</th>
 	    </tr>
 	  </thead>
-	 	
-	    <tbody>
-			<% @products.each do |p| %>
+	 	 
+	    <tbody>	
+			
+				<% @products.each do |p| %>
 	    		<tr>
-					<td><%= p.title %></td> 	
-					<td><%= number_to_currency(p.price, :unit => "$") %></td> 	
-					<td><%= link_to 'Delete', product_path(p),
+					<td><%= p.title %></td>	
+					<td><%= number_to_currency(p.price, :unit => "$") %></td> 
+					<td><%= %></td>
+					<td><%= link_to 'Edit', edit_product_path(p), class: 'btn btn-primary' %>	
+					| <%= link_to 'Delete', product_path(p),
 				           	  method: :delete, class: "btn btn-danger",
 				            	 data: {confirm: 'Do you want to remove this Product?'} %> 	
 				    </td>	             	 	

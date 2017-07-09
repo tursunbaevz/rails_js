@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   	
-  	resources :products
 
+  
+
+	resources :orders 
+  	resources :products
+  	resources :order_products
 	resources :clients
 
-	resources :orders
+
+
   	
-  	root 'clients#index'
+  	root 'order_products#index'
 
 	get 'test', to: 'tasks#test'
 
