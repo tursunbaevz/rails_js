@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 
   	
-  	root 'order_products#index'
+  	root 'orders#index'
 
 	get 'test', to: 'tasks#test'
 

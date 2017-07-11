@@ -1,0 +1,9 @@
+<fieldset>
+  <%= f.label :title, "Product" %><br />
+  <%= f.collection_select :product_id, Product.all, :id, :title %>
+
+  <%= f.label :Quantity  %> <br>
+  <%= f.number_field :quantity %>
+   <%= link_to "remove", '#', class: "remove_fields" %>
+   
+</fieldset>
