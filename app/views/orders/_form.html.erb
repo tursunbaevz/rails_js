@@ -19,9 +19,10 @@
     <%= f.fields_for :order_products do |builder| %>
       <%= render 'order_product_fields', f: builder %>
     <% end %>
-    <%= link_to_add_fields "Add Order Product", f, :order_products %>
-
+      <div class="add_order_product">
+       <%= link_to_add_fields "Add Order Product",  f, :order_products %>
+      </div>   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button button-default' %>
   </div>
 <% end %>

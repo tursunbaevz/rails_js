@@ -1,9 +1,13 @@
 <fieldset>
-  <%= f.label :title, "Product" %><br />
-  <%= f.collection_select :product_id, Product.all, :id, :title %>
+  <div class="form-group">	
+	  <%= f.label :title, "Product" %><br />
+	  <%= f.collection_select :product_id, Product.all, :id, :title %><br>
+  </div>	
+  <div class="form-group">		
+	  <%= f.label :Quantity  %> <br>
+	  <%= f.number_field :quantity %>
+   		<%= link_to "remove", '#', class: "remove_fields" %>
+  </div>
 
-  <%= f.label :Quantity  %> <br>
-  <%= f.number_field :quantity %>
-   <%= link_to "remove", '#', class: "remove_fields" %>
    
 </fieldset>

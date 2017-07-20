@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    @order_products = OrderProduct.all
   end
 
   # GET /orders/1
@@ -25,7 +26,6 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
 
     respond_to do |format|
       if @order.save
