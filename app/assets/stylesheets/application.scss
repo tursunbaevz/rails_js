@@ -23,6 +23,17 @@
 	margin-right: 14em;
 }
 
+.first_table {
+	margin-right: 41px;
+}
+
+.second_table{
+	margin-right: 253px;
+	margin-top: -1px;
+}
+
+
+
 h1 {
 	text-align: center
 }
@@ -39,3 +50,143 @@ h1 {
 	margin-top:  15px;
 	margin-bottom:  15px;
 }
+
+
+.client-name{
+	padding-top: 4px;
+}
+
+
+.wrapper
+{
+	width: 100%;
+	max-width: 80rem;
+	margin-left: auto;
+	margin-right: auto;
+/*⇑⇑⇑⇑⇑__margin: 0 auto;_⇑⇑⇑⇑⇑⇑⇑ same with__⇑⇑⇑*/
+	padding: 5rem;
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 0.1875rem;
+}
+
+.col_01 {
+	width: 62.5%;
+	float: left;
+}
+
+.col_01 > :first-child {
+	margin-top: 0;
+}
+
+.col_02 {
+	width: 36.5%;
+	float: right;
+	box-sizing: border-box;
+
+}
+
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+
+
+@media (max-width: 85rem) {
+	body {
+		padding: 0 2.5rem;
+
+	}
+} 
+
+@media (max-width: 80rem) {
+	.wrapper {
+		padding: 4.5rem;
+	}
+
+	.col_02 {
+		padding-left: 4.5rem;
+	}
+} 
+
+@media (max-width: 75rem) {
+	.wrapper {
+		padding: 4rem;
+	}
+
+	.col_02 {
+		padding-left: 4rem;
+	}
+}
+
+
+@media (max-width: 70rem) {
+	.wrapper {
+		padding: 3.5rem;
+	}
+
+	.col_02 {
+		padding-left: 3.5rem;
+	}
+}
+
+@media (max-width: 65rem) {
+	.wrapper {
+		padding: 3rem;
+	}
+
+	.col_02 {
+		padding-left: 3rem;
+	}
+}
+
+
+
+@media (max-width: 60rem) {
+
+	h1 {
+
+		font-size: 5.6vw;
+
+	}
+
+	h2 {
+
+		font-size: 3.9vw;
+		
+	}
+
+	.wrapper {
+		padding: 4rem;
+	}
+	
+	.col_01, .col_02 {
+
+		float: none;
+		width: 100%
+
+	}
+
+	.col_02 {
+		padding-left: 0;
+		padding-top: 4rem;
+	}
+
+} 
+
+
+
+
+
+
+
+
+

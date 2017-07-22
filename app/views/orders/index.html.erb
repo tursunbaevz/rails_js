@@ -1,46 +1,61 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
-    <%= link_to 'New Order', new_order_path, class: "btn btn-default" %>
+  <h1>Orders</h1>
+      <%= link_to 'New Order', new_order_path, class: "btn btn-primary" %>
+  <div class="wraper">
+    <main class="clearfix">
+      <section class="col_01">
+        <table class="table table-striped table-inverse  first_table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th> Product</th>
+              <th> Price</th>
+              <th>Quantity</th>
+         
+            
+            </tr>
+          </thead>
 
-<table class="table table-striped table-inverse ">
-  <thead>
-    <tr>
-      <th>Order ID</th>
-      <th> Product</th>
-      <th> Price</th>
-      <th>Quantity</th>
-      <th>Client</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+          <tbody>
 
-  <tbody>
+              <% @order_products.map do |op| %>
+              <tr>
+                <td> <%= op.order.client_id %> </td>
+                <td> <%= op.product.title %> </td>
+                <td> <%= number_to_currency(op.product.price, :unit => "$") %> </td>
+                <td> <%= op.quantity %> </td>
+              </tr>
 
-      <% @order_products.map do |op| %>
-      <tr>
-        <td> <%= op.order.client_id %> </td>
-        <td> <%= op.product.title %> </td>
-        <td> <%= number_to_currency(op.product.price, :unit => "$") %> </td>
-        <td> <%= op.quantity %> </td>
+              <% end %>
+              
 
-      
-      <% end %>
+          </tbody>
+        </table>
+      </section>
+        <!-- table for name -->
+      <aside class="col_02">
+        <table class="table table-striped table-inverse second_table">
+          <tbody>
+            <thead>
+              <tr>
+                <th>Client</th>
+              </tr>
 
-    <% @orders.each do |order| %>
-      
-        <td><%= order.client.name %></td>
-        <td><%= link_to 'Show', order %>
-        <%= link_to 'Edit', edit_order_path(order) %>
-        <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table>
-      
-
-
-
+            </thead>
+              <% @orders.each do |order| %>
+                <tr>
+                  <td><%= order.client.name %></td>
+                  <td><%= link_to 'Show', order %></td>
+                  <td><%= link_to 'Edit', edit_order_path(order) %></td>
+                  <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>      
+      </aside>  
+  </main>
+  </div>
 </div>
+
