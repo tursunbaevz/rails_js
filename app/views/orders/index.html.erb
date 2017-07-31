@@ -20,14 +20,15 @@
 
           <tbody>
 
-              <% @order_products.map do |op| %>
+              <%  @order_products.map do |op| %>
               <tr>
                 <td> <%= op.order.client_id %> </td>
                 <td> <%= op.product.title %> </td>
                 <td> <%= number_to_currency(op.product.price, :unit => "$") %> </td>
                 <td> <%= op.quantity %> </td>
               </tr>
-
+               
+                <% end %>
               <% end %>
               
 
